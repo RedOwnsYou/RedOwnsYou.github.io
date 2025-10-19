@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Basit Hesap Makinesi</title>
+</head>
+<body>
+  <h2>Hesap Makinesi</h2>
+  <label>1. Sayı: <input type="number" id="sayi1"></label><br><br>
+  <label>2. Sayı: <input type="number" id="sayi2"></label><br><br>
+
+  <label>İşlem Seçin:</label>
+  <select id="islem">
+    <option value="toplama">Toplama</option>
+    <option value="çıkarma">Çıkarma</option>
+    <option value="çarpma">Çarpma</option>
+    <option value="bölme">Bölme</option>
+  </select><br><br>
+
+  <button onclick="hesapla()">Hesapla</button>
+  <p id="cevap"></p>
+
+  <script>
+    function hesapla() {
+      const x = parseFloat(document.getElementById("sayi1").value);
+      const y = parseFloat(document.getElementById("sayi2").value);
+      const z = document.getElementById("islem").value;
+      let sonuc;
+
+      if (z === "toplama") {
+        sonuc = x + y;
+      } else if (z === "çıkarma") {
+        sonuc = x - y;
+      } else if (z === "çarpma") {
+        sonuc = x * y;
+      } else if (z === "bölme") {
+        if (y !== 0) {
+          sonuc = x / y;
+        } else {
+          sonuc = "Sıfıra bölme hatası!";
+        }
+      } else {
+        sonuc = "Geçersiz işlem!";
+      }
+
+      document.getElementById("cevap").innerText = "Cevap: " + sonuc;
+    }
+  </script>
+</body>
+</html>
 
