@@ -1,62 +1,59 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HERŞEYİ BİLİYORUM</title>
+    <style>
+        .x{
+            text-decoration: none;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            
+    }
 
-<html>
-    <head>
-        <style>label{color:darkmagenta;}</style>
-        <title>
-            Form
-        </title>
-    </head>
+        #x{
+            list-style: none;
+            padding-left: 10px;
+            padding-top: 10px;
+        }
 
-    <body>
-        <form action="">
-            <label for="ad">Ad:</label>
-            <input type="text" name="ad" id="ad" required>
-            <br>
-            <br>
-            <label for="soyad">Soyad:</label>
-            <input type="text" name="soyad" id="soyad"> 
-            <br><br>
-            <label for="sifre">Şifre:</label>
-            <input type="password" name="sifre" id="sifre" minlength="4" maxlength="20" required>
-            <br><br>
-            <label for="email">E-Posta:</label>
-            <input type="email" name="email" id="email" required placeholder="Örnek@gmail.com">
-            <br><br>
-            <label for="tel">Telefon:</label>
-            <input type="tel" name="tel" id="tel" required placeholder="(464) 464 464 46 46">
-            <br><br>
-            <label for="dogum">Doğum Tarihi:</label>
-            <input type="date" name="dogum" id="dogum">
-            <br><br>
-            <label for="kardes">Kardeş Sayısı:</label>
-            <input type="number" name="kardes" id="kardes" min="0" max="8">
-            <br><br>
-            <label for="cins">Cinsiyet:</label>
-            <br>
-            <label for="erkek">Erkek-</label>
-            <input type="radio" name="cins" id="erkek" value="erkek">
-            <label for="kadın">Kadın-</label>
-            <input type="radio" name="cins" id="kadın" value="kadın">
-            <br><br>
-            <label for="takım">Tuttuğun Takım:</label>
-            <select name="takım" id="takım">
-                <option value="gs">Gs</option>
-                <option value="fb">Fb</option>
-                <option value="bjk">Bjk</option>
-            </select>
-            <br><br>
-            <label for="is">İşin Varmı?:</label>
-            <input type="checkbox" name="is" id="is">
-            <br><br>
-            <label for="bahset">Bize Kendinizden Bahsedin:</label>
-            <br>
-            <textarea name="bahset" id="bahset" rows="10" cols="30"></textarea>
-            <br><br>
-            <label for="proje">Bize Bir Projenizi Gösterin:</label>
-            <input type="file" name="proje" id="proje" accept=".py">
-            <br><br>
-            <input type="submit">
-        </form>
-    </body>
+        ul li{
+            padding: 5px;
+        }
+
+        li:hover{
+            background-color:green;
+            transition: 0.3s;
+        }
+
+        li{
+            background-color: black;
+            width: 20%;
+        }
+
+        .a{
+            target="_blank"
+        }
+    </style>
+
+    
+</head>
+<body>
+    <ul id="x">
+        <li>
+            <a href="https://www.youtube.com/" class="x" target="_blank">Ana Sayfa</a>
+        </li>                                                  
+        <li>
+            <a href="https://www.youtube.com/shorts/3S0hg9u7Yno" class="x" target="_blank">Muq bi video</a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/feed/history" class="x" target="_blank">Geçmişin😏 (Herşeyi biliyorum)</a>
+        </li>
+    </ul>
+    </table>
+
+    
+</body>
 </html>
