@@ -1,59 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HERŞEYİ BİLİYORUM</title>
-    <style>
-        .x{
-            text-decoration: none;
-            color:white;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-            
-    }
-
-        #x{
-            list-style: none;
-            padding-left: 10px;
-            padding-top: 10px;
-        }
-
-        ul li{
-            padding: 5px;
-        }
-
-        li:hover{
-            background-color:green;
-            transition: 0.3s;
-        }
-
-        li{
-            background-color: black;
-            width: 20%;
-        }
-
-        .a{
-            target="_blank"
-        }
-    </style>
-
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hesap Makinesi</title>
 </head>
 <body>
-    <ul id="x">
-        <li>
-            <a href="https://www.youtube.com/" class="x" target="_blank">Ana Sayfa</a>
-        </li>                                                  
-        <li>
-            <a href="https://www.youtube.com/shorts/3S0hg9u7Yno" class="x" target="_blank">Muq bi video</a>
-        </li>
-        <li>
-            <a href="https://www.youtube.com/feed/history" class="x" target="_blank">Geçmişin😏 (Herşeyi biliyorum)</a>
-        </li>
-    </ul>
-    </table>
+  <button onclick="toplama()" style="border: solid 2px black; width: 75px; height: 50px; font-size: medium">Toplama</button>
+  <br><br>
+  <button onclick="çıkarma()" style="border: solid 2px black; width: 75px; height: 50px; font-size: medium">Çıkarma</button>
+  <br><br>
+  <button onclick="çarpma()" style="border: solid 2px black; width: 75px; height: 50px; font-size: medium">Çarpma</button>
+  <br><br>
+  <button onclick="bölme()" style="border: solid 2px black; width: 75px; height: 50px; font-size: medium">Bölme</button>
+  <br><br>
+  <button id="yenileBtn" onclick="location.reload()" style="display: none; border: solid 2px black; width: 75px; height: 50px; font-size: medium">
+    Yeniden Başlat
+  </button>
 
-    
+  <script>
+    function gösterResetButonu() {
+      document.body.innerHTML += '<br><br><button onclick="location.reload()" style="border: solid 2px black; width: 150px; height: 50px; font-size: medium">Yeniden Başlat</button>';
+    }
+
+    function toplama() {
+      alert("Toplama işlemi!");
+      let sayı1 = prompt("1. Sayı:");
+      let sayı2 = prompt("2. Sayı:");
+
+      sayı1 = Number(sayı1);
+      sayı2 = Number(sayı2);
+
+      if (isNaN(sayı1) || isNaN(sayı2)) {
+        alert("Lütfen geçerli bir sayı girin!");
+      } else {
+        document.write("Cevap: " + (sayı1 + sayı2));
+        gösterResetButonu();
+      }
+    }
+
+    function çıkarma() {
+      alert("Çıkarma işlemi!");
+      let sayı1 = prompt("1. Sayı:");
+      let sayı2 = prompt("2. Sayı:");
+
+      sayı1 = Number(sayı1);
+      sayı2 = Number(sayı2);
+
+      document.write("Cevap: " + (sayı1 - sayı2));
+      gösterResetButonu();
+    }
+
+    function çarpma() {
+      alert("Çarpma işlemi!");
+      let sayı1 = prompt("1. Sayı:");
+      let sayı2 = prompt("2. Sayı:");
+
+      sayı1 = Number(sayı1);
+      sayı2 = Number(sayı2);
+
+      document.write("Cevap: " + (sayı1 * sayı2));
+      gösterResetButonu();
+    }
+
+    function bölme() {
+      alert("Bölme işlemi!");
+      let sayı1 = prompt("1. Sayı:");
+      let sayı2 = prompt("2. Sayı:");
+
+      sayı1 = Number(sayı1);
+      sayı2 = Number(sayı2);
+
+      document.write("Cevap: " + (sayı1 / sayı2));
+      gösterResetButonu();
+    }
+  </script>
 </body>
 </html>
