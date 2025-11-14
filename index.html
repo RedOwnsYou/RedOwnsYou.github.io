@@ -3,91 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hesap Makinesi</title>
+  <title>Calculator!</title>
 </head>
 <body>
-  <button onclick="toplama()" style="border: solid 2px black; width: 75px; height: 50px; font-size: medium">Toplama</button>
+  <p style="display: block; font-size: large; font-weight: 600px;">Calculator!!</p>
+  <br>
+  <button onclick="plus()" style="border: solid 2px black; width: 75px; height: 50px; font-size: medium">+</button>
   <br><br>
-  <button onclick="çıkarma()" style="border: solid 2px black; width: 75px; height: 50px; font-size: medium">Çıkarma</button>
+  <button onclick="minus()" style="border: solid 2px black; width: 75px; height: 50px; font-size: medium">-</button>
   <br><br>
-  <button onclick="çarpma()" style="border: solid 2px black; width: 75px; height: 50px; font-size: medium">Çarpma</button>
+  <button onclick="multby()" style="border: solid 2px black; width: 75px; height: 50px; font-size: medium">x</button>
   <br><br>
-  <button onclick="bölme()" style="border: solid 2px black; width: 75px; height: 50px; font-size: medium">Bölme</button>
+  <button onclick="divby()" style="border: solid 2px black; width: 75px; height: 50px; font-size: medium">/</button>
   <br><br>
   <button id="yenileBtn" onclick="location.reload()" style="display: none; border: solid 2px black; width: 75px; height: 50px; font-size: medium">
     Yeniden Başlat
   </button>
-
   <script>
-    function gösterResetButonu() {
+    function showResetButton() {
       document.body.innerHTML += '<br><br><button onclick="location.reload()" style="border: solid 2px black; width: 150px; height: 50px; font-size: medium">Yeniden Başlat</button>';
     }
+    function plus() {
+      alert("Addition operation!");
+      let num1 = prompt("1. Number:");
+      let num2 = prompt("2. Number:");
 
-    function toplama() {
-      alert("Toplama işlemi!");
-      let sayı1 = prompt("1. Sayı:");
-      let sayı2 = prompt("2. Sayı:");
+      num1 = Number(num1);
+      num2 = Number(num2);
 
-      sayı1 = Number(sayı1);
-      sayı2 = Number(sayı2);
-
-      if (isNaN(sayı1) || isNaN(sayı2)) {
-        alert("Lütfen sayı giriniz!");
+      if (isNaN(num1) || isNaN(num2)) {
+        alert("Please enter numbers!");
       } else {
-        document.write("Cevap: " + (sayı1 + sayı2));
-        gösterResetButonu();
+        document.write("Answer: " + (num1 + num2));
+        showResetButton();
       }
     }
+    function minus() {
+      alert("Subtraction operation!");
+      let num1 = prompt("1. Number:");
+      let num2 = prompt("2. Number:");
 
-    function çıkarma() {
-      alert("Çıkarma işlemi!");
-      let sayı1 = prompt("1. Sayı:");
-      let sayı2 = prompt("2. Sayı:");
+      num1 = Number(num1);
+      num2 = Number(num2);
 
-      sayı1 = Number(sayı1);
-      sayı2 = Number(sayı2);
-
-      if (isNaN(sayı1) || isNaN(sayı2)) {
-        alert("Lütfen sayı giriniz!");
+      if (isNaN(num1) || isNaN(num2)) {
+        alert("Please enter numbers!");
       } else {
-        document.write("Cevap: " + (sayı1 - sayı2));
-        gösterResetButonu();
+        document.write("Answer: " + (num1 - num2));
+        showResetButton();
       }
       
     }
+    function multby() {
+      alert("Multiplication operation!");
+      let num1 = prompt("1. Number:");
+      let num2 = prompt("2. Number:");
 
-    function çarpma() {
-      alert("Çarpma işlemi!");
-      let sayı1 = prompt("1. Sayı:");
-      let sayı2 = prompt("2. Sayı:");
+      num1 = Number(num1);
+      num2 = Number(num2);
 
-      sayı1 = Number(sayı1);
-      sayı2 = Number(sayı2);
-
-      if (isNaN(sayı1) || isNaN(sayı2)) {
-        alert("Lütfen sayı giriniz!");
+      if (isNaN(num1) || isNaN(num2)) {
+        alert("Please enter numbers!");
       } else {
-        document.write("Cevap: " + (sayı1 * sayı2));
-        gösterResetButonu();
+        document.write("Answer: " + (num1 * num2));
+        showResetButton();
       }
-
     }
+    function divby() {
+      alert("Division operation!");
+      let num1 = prompt("1. Number:");
+      let num2 = prompt("2. Number:");
 
-    function bölme() {
-      alert("Bölme işlemi!");
-      let sayı1 = prompt("1. Sayı:");
-      let sayı2 = prompt("2. Sayı:");
+      num1 = Number(num1);
+      num2 = Number(num2);
 
-      sayı1 = Number(sayı1);
-      sayı2 = Number(sayı2);
-
-      if (isNaN(sayı1) || isNaN(sayı2)) {
-        alert("Lütfen sayı giriniz!");
+      if (isNaN(num1) || isNaN(num2)) {
+        alert("Please enter numbers!");
       } else {
-        document.write("Cevap: " + (sayı1 / sayı2));
-        gösterResetButonu();
+        document.write("Answer: " + (num1 / num2));
+        showResetButton();
       }
-
     }
   </script>
 </body>
