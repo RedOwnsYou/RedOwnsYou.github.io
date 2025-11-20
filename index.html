@@ -28,24 +28,24 @@
     </style>
 </head>
 <body>
-    <label style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif;" for="first">1. Number:</label>
+    <label translate="no" style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif;" for="first">1. Number:</label>
     <input id="first" style="padding-top: 4px;" class="input" type="number"><br>
     <br>
-    <label style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif;" for="second">2. Number:</label>
+    <label translate="no" style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif;" for="second">2. Number:</label>
     <input id="second" class="input" style="margin-bottom: 3px;" type="number"><br>
     <br>
-    <label for="operation" style="font-family: 'Segoe UI', sans-serif;">Operation:</label>
-    <select style="cursor: pointer; border: none; box-shadow: 0 0 20px rgba(0,0,0,0.5); border-radius: 5px;" id="operation">
-        <option value="addition">Addition</option>
-        <option value="subtraction">Subtraction</option>
-        <option value="multiplication">Multiplication</option>
-        <option value="division">Division</option>
+    <label translate="no" for="operation" style="font-family: 'Segoe UI', sans-serif;">Operation:</label>
+    <select translate="no" style="cursor: pointer; border: none; box-shadow: 0 0 20px rgba(0,0,0,0.5); border-radius: 5px;" id="operation">
+        <option translate="no" value="addition">Addition</option>
+        <option translate="no" value="subtraction">Subtraction</option>
+        <option translate="no" value="multiplication">Multiplication</option>
+        <option translate="no" value="division">Division</option>
     </select><br>
     <br>
-    <button class="x" onclick="x()">Calculate</button>
+    <button translate="no" class="x" onclick="x()">Calculate</button>
     <br>
-    <div style="margin-top: 15px;" id="result"></div>
-    <div style="margin-top: 15px;" id="reset" onclick="a()"></div>
+    <div translate="no" style="margin-top: 15px;" id="result"></div>
+    <div translate="no" style="margin-top: 15px;" id="reset" onclick="a()"></div>
 
     <script>
         function x(){
@@ -57,6 +57,7 @@
             document.getElementById("result").textContent = "Pls Enter Numbers!"
             document.getElementById("reset").innerHTML = `
     <button onclick="a()" style="
+    translate="no"
     cursor: pointer;
     background-color: white;
     color: black;
