@@ -1,131 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator!</title>
-  <link rel="icon" href="calc.jpeg" type="image/jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="icon" href="calc.jpeg">
+    <style>
+        .input{
+            margin-left: 4.5px;
+            border: none;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            border-radius: 5px;
+            width: 83px;
+        }
 
+        .x{
+            border: none;
+    border-radius: 8px;
+    width: 75px;
+    height: 50px;
+    font-size: medium;
+    color: black;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <p style="display: block; font-size: large; font-weight: 600px; font-family: 'Segoe UI', sans-serif;">Calculator 🧮</p>
-  <br>
-  <button onclick="plus()" style="border: none;
-    border-radius: 8px;
-    width: 75px;
-    height: 50px;
-    font-size: medium;
-    background-color: rgb(252, 44, 3);
-    color: white;
+    <label style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif;" for="first">1. Number:</label>
+    <input id="first" style="padding-top: 4px;" class="input" type="number"><br>
+    <br>
+    <label style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif;" for="second">2. Number:</label>
+    <input id="second" class="input" style="margin-bottom: 3px;" type="number"><br>
+    <br>
+    <label for="operation" style="font-family: 'Segoe UI', sans-serif;">Operation:</label>
+    <select style="cursor: pointer; border: none; box-shadow: 0 0 20px rgba(0,0,0,0.5); border-radius: 5px;" id="operation">
+        <option value="addition">Addition</option>
+        <option value="subtraction">Subtraction</option>
+        <option value="multiplication">Multiplication</option>
+        <option value="division">Division</option>
+    </select><br>
+    <br>
+    <button class="x" onclick="x()">Calculate</button>
+    <br>
+    <div style="margin-top: 15px;" id="result"></div>
+    <div style="margin-top: 15px;" id="reset" onclick="a()"></div>
+
+    <script>
+        function x(){
+            let num1 = parseFloat(document.getElementById("first").value);
+            let num2 = parseFloat(document.getElementById("second").value);
+            let operation = document.getElementById("operation").value;
+            
+            if(isNaN(num1) || isNaN(num2)){
+            document.getElementById("result").textContent = "Pls Enter Numbers!"
+            document.getElementById("reset").innerHTML = `
+    <button onclick="a()" style="
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    margin-top:10px;
+    border:none;
+    border-radius:6px;
+    padding:8px 12px;
     font-family: 'Segoe UI', sans-serif;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);">+</button>
-  <br><br>
-  <button onclick="minus()" style="border: none;
-    border-radius: 8px;
-    width: 75px;
-    height: 50px;
-    font-size: medium;
-    background-color: rgb(252, 44, 3);
-    color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    ">Try again</button>`;
+            return;
+            }
+            let result;
+            switch (operation){
+                case "addition":
+                    result = num1 + num2
+                    break;
+
+                case "subtraction":
+                    result = num1 - num2
+                    break;
+                case "multiplication":
+                    result = num1 * num2
+                    break;
+
+                case "division":
+                    result = num1 / num2
+                    break;            
+            }
+            document.getElementById("result").textContent = "Result: " + result
+            document.getElementById("reset").innerHTML = `
+    <button onclick="a()" style="
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    margin-top:10px;
+    border:none;
+    border-radius:6px;
+    padding:8px 12px;
     font-family: 'Segoe UI', sans-serif;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);">-</button>
-  <br><br>
-  <button onclick="multby()" style="border: none;
-    border-radius: 8px;
-    width: 75px;
-    height: 50px;
-    font-size: medium;
-    background-color: rgb(252, 44, 3);
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);">x</button>
-  <br><br>
-  <button onclick="divby()" style="border: none;
-    border-radius: 8px;
-    width: 75px;
-    height: 50px;
-    font-size: medium;
-    background-color: rgb(252, 44, 3);
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);">/</button>
-  <br><br>
-  <button id="resetBtn" onclick="location.reload()" style="
-    display: none;
-    border: none;
-    border-radius: 8px;
-    width: 75px;
-    height: 50px;
-    font-size: medium;
-    background-color: rgb(252, 44, 3);
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);">Try again!</button>
-  <script>
-    function showResetButton() {
-      document.body.innerHTML += '<button onclick="location.reload()" style="border: none; border-radius: 8px; width: 150px; height: 50px; font-size: medium; background-color: rgb(252, 44, 3); color: white; font-family: \'Segoe UI\', sans-serif; box-shadow: 0 0 20px rgba(0,0,0,0.5);">Try again!</button>';
-    }
-    function plus() {
-      alert("Addition operation!");
-      let num1 = prompt("1. Number:");
-      let num2 = prompt("2. Number:");
-
-      num1 = Number(num1);
-      num2 = Number(num2);
-
-      if (isNaN(num1) || isNaN(num2)) {
-        alert("Please enter numbers!");
-      } else {
-        document.write('<p style="font-family: \'Segoe UI\', sans-serif;">Answer: ' + (num1 + num2) + '</p>');
-        showResetButton();
-      }
-    }
-    function minus() {
-      alert("Subtraction operation!");
-      let num1 = prompt("1. Number:");
-      let num2 = prompt("2. Number:");
-
-      num1 = Number(num1);
-      num2 = Number(num2);
-
-      if (isNaN(num1) || isNaN(num2)) {
-        alert("Please enter numbers!");
-      } else {
-        document.write('<p style="font-family: \'Segoe UI\', sans-serif;">Answer: ' + (num1 - num2) + '</p>');
-        showResetButton();
-      }
-      
-    }
-    function multby() {
-      alert("Multiplication operation!");
-      let num1 = prompt("1. Number:");
-      let num2 = prompt("2. Number:");
-
-      num1 = Number(num1);
-      num2 = Number(num2);
-
-      if (isNaN(num1) || isNaN(num2)) {
-        alert("Please enter numbers!");
-      } else {
-        document.write('<p style="font-family: \'Segoe UI\', sans-serif;">Answer: ' + (num1 * num2) + '</p>');
-        showResetButton();
-      }
-    }
-    function divby() {
-      alert("Division operation!");
-      let num1 = prompt("1. Number:");
-      let num2 = prompt("2. Number:");
-
-      num1 = Number(num1);
-      num2 = Number(num2);
-
-      if (isNaN(num1) || isNaN(num2)) {
-        alert("Please enter numbers!");
-      } else {
-        document.write('<p style="font-family: \'Segoe UI\', sans-serif;">Answer: ' + (num1 / num2) + '</p>');
-        showResetButton();
-      }
-    }
-  </script>
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    ">Try again</button>`;
+        }
+        function a(){
+            document.getElementById("first").value = ""
+            document.getElementById("second").value = ""
+            document.getElementById("operation").value = "addition"
+            document.getElementById("result").textContent = ""
+            document.getElementById("reset").innerHTML = ""
+        }
+    </script>
 </body>
 </html>
