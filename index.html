@@ -6,12 +6,31 @@
     <title>Calculator</title>
     <link rel="icon" href="calc.jpeg">
     <style>
+        select{
+            transition: transform 0.5s ease;
+            will-change: transform;
+            border: none;
+            outline: none;
+        }
+
+        select:hover{
+            transform: scale(1.03) translateX(0);
+        }
+
         .input{
             margin-left: 4.5px;
             border: none;
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
             border-radius: 5px;
             width: 83px;
+            outline: none;
+            transition: transform 0.5s ease;
+            will-change: transform;
+            cursor: pointer;
+        }
+
+        input:hover{
+            transform: scale(1.03) translateX(0);
         }
 
         .x{
@@ -24,6 +43,15 @@
     font-family: 'Segoe UI', sans-serif;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
     cursor: pointer;
+        }
+
+        button{
+            transition: transform 0.5s ease;
+            will-change: transform;
+        }
+
+        button:hover{
+            transform: scale(1.03) translateX(0);
         }
     </style>
 </head>
@@ -57,16 +85,16 @@
             document.getElementById("result").textContent = "Pls Enter Numbers!"
             document.getElementById("reset").innerHTML = `
     <button onclick="a()" style="
-    translate="no"
     cursor: pointer;
     background-color: white;
     color: black;
     margin-top:10px;
-    border:none;
     border-radius:6px;
     padding:8px 12px;
     font-family: 'Segoe UI', sans-serif;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: none;
+    outline: none;
     ">Try again</button>`;
             return;
             }
@@ -94,11 +122,12 @@
     background-color: white;
     color: black;
     margin-top:10px;
-    border:none;
     border-radius:6px;
     padding:8px 12px;
     font-family: 'Segoe UI', sans-serif;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: none;
+    outline: none;
     ">Try again</button>`;
         }
         function a(){
