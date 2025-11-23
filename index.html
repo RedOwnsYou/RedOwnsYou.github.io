@@ -6,6 +6,15 @@
     <title>Calculator</title>
     <link rel="icon" href="calc.jpeg">
     <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 99vh;
+            background-color: lightblue;
+        }
+
         select{
             transition: transform 0.5s ease;
             will-change: transform;
@@ -27,6 +36,7 @@
             transition: transform 0.5s ease;
             will-change: transform;
             cursor: pointer;
+            margin-top: 7px;
         }
 
         input:hover{
@@ -35,14 +45,29 @@
 
         .x{
             border: none;
-    border-radius: 8px;
-    width: 75px;
-    height: 50px;
-    font-size: medium;
-    color: black;
-    font-family: 'Segoe UI', sans-serif;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    cursor: pointer;
+            border-radius: 8px;
+            width: 100px;
+            height: 50px;
+            font-size: medium;
+            color: black;
+            font-family: 'Segoe UI', sans-serif;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .i{
+            padding: 20px;
+            border: none;
+            border-radius: 15px;
+            width: 200px;
+            height: 330px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            display: flex;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            background-color: white;
         }
 
         button{
@@ -56,25 +81,26 @@
     </style>
 </head>
 <body>
-    <label translate="no" style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif;" for="first">1. Number:</label>
+<div class="i">
+    <label style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif;" for="first">1. Number:</label>
     <input id="first" style="padding-top: 4px;" class="input" type="number"><br>
-    <br>
-    <label translate="no" style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif;" for="second">2. Number:</label>
+    
+    <label style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif;" for="second">2. Number:</label>
     <input id="second" class="input" style="margin-bottom: 3px;" type="number"><br>
+    
+    <label for="operation" style="font-family: 'Segoe UI', sans-serif; margin-bottom: 10px;">Operation:</label>
+    <select style="cursor: pointer; border: none; box-shadow: 0 0 20px rgba(0,0,0,0.5); border-radius: 5px;" id="operation">
+        <option value="addition">Addition Process</option>
+        <option value="subtraction">Subtraction Process</option>
+        <option value="multiplication">Multiplication Process</option>
+        <option value="division">Division Process</option>
+    </select>
     <br>
-    <label translate="no" for="operation" style="font-family: 'Segoe UI', sans-serif;">Operation:</label>
-    <select translate="no" style="cursor: pointer; border: none; box-shadow: 0 0 20px rgba(0,0,0,0.5); border-radius: 5px;" id="operation">
-        <option translate="no" value="addition">Addition</option>
-        <option translate="no" value="subtraction">Subtraction</option>
-        <option translate="no" value="multiplication">Multiplication</option>
-        <option translate="no" value="division">Division</option>
-    </select><br>
-    <br>
-    <button translate="no" class="x" onclick="x()">Calculate</button>
-    <br>
-    <div translate="no" style="margin-top: 15px;" id="result"></div>
-    <div translate="no" style="margin-top: 15px;" id="reset" onclick="a()"></div>
-
+    <button class="x" onclick="x()">Calculate</button>
+    
+    <div style="margin-top: 15px;" id="result"></div>
+    <div style="margin-top: 15px;" id="reset" onclick="a()"></div>
+</div>
     <script>
         function x(){
             let num1 = parseFloat(document.getElementById("first").value);
