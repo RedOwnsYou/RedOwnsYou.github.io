@@ -12,14 +12,23 @@
             justify-content: center;
             flex-direction: column;
             min-height: 97vh;
-            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            background: linear-gradient(135deg, #af43e9, #38f9d7);
+        }
+
+        option{
+            font-family: 'Segoe UI' sans-serif;
         }
 
         select{
             transition: transform 0.5s ease;
             will-change: transform;
-            border: none;
-            outline: none;
+            border: solid 1.5px;
+            outline: solid 1.5px;
+            cursor: pointer;
+            border: none; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2); 
+            border-radius: 5px; 
+            font-family: 'Segoe UI', sans-serif;
         }
 
         select:hover{
@@ -28,8 +37,8 @@
 
         .input{
             margin-left: 4.5px;
-            border: none;
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            border: solid 1.5px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             border-radius: 5px;
             width: 83px;
             outline: none;
@@ -37,6 +46,7 @@
             will-change: transform;
             cursor: pointer;
             margin-top: 7px;
+            padding-bottom: 4px;
         }
 
         input:hover{
@@ -44,24 +54,24 @@
         }
 
         .x{
-            border: none;
+            border: solid 1.5px;
             border-radius: 8px;
             width: 100px;
             height: 50px;
             font-size: medium;
             color: black;
             font-family: 'Segoe UI', sans-serif;
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             cursor: pointer;
             margin-top: 15px;
         }
 
         .i{
             padding: 20px;
-            border: none;
+            border: solid 2px;
             border-radius: 15px;
             width: 200px;
-            height: 330px;
+            height: 360px;
             align-items: center;
             justify-content: center;
             flex-direction: column;
@@ -84,12 +94,12 @@
 <div class="i">
     <label style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif;" for="first">1. Number:</label>
     <input id="first" style="padding-top: 4px;" class="input" type="number"><br>
-    
+
     <label style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif;" for="second">2. Number:</label>
     <input id="second" class="input" style="margin-bottom: 3px;" type="number"><br>
     
     <label for="operation" style="font-family: 'Segoe UI', sans-serif; margin-bottom: 10px;">Operation:</label>
-    <select style="cursor: pointer; border: none; box-shadow: 0 0 30px rgba(0,0,0,0.5); border-radius: 5px;" id="operation">
+    <select id="operation">
         <option value="addition">Addition Process</option>
         <option value="subtraction">Subtraction Process</option>
         <option value="multiplication">Multiplication Process</option>
@@ -111,14 +121,14 @@
             document.getElementById("result").textContent = "Pls Enter Numbers!"
             document.getElementById("reset").innerHTML = `
             <button onclick="a()" style="
-            border: none;
+            border: solid 2px;
             border-radius: 8px;
             width: 100px;
             height: 50px;
             font-size: medium;
             color: black;
             font-family: 'Segoe UI', sans-serif;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             cursor: pointer;
             ">Try again</button>`;
             return;
