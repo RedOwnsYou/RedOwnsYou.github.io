@@ -1,200 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
-    <link rel="icon" href="calc.jpeg" />
-    <style>
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        min-height: 97vh;
-        background: linear-gradient(135deg, #af43e9, #38f9d7);
-      }
-
-      option {
-        font-family: "Segoe UI" sans-serif;
-      }
-
-      select {
-        transition: transform 0.5s ease;
-        will-change: transform;
-        border: solid 1.5px;
-        outline: solid 1.5px;
-        cursor: pointer;
-        border: none;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-        font-family: "Segoe UI", sans-serif;
-        margin-bottom: 15px;
-      }
-
-      select:hover {
-        transform: scale(1.03) translateX(0);
-      }
-
-      .input {
-        margin-left: 4.5px;
-        border: solid 1.5px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-        width: 83px;
-        outline: none;
-        transition: transform 0.5s ease;
-        will-change: transform;
-        cursor: pointer;
-        margin-top: 7px;
-        padding-bottom: 4px;
-      }
-
-      input:hover {
-        transform: scale(1.03) translateX(0);
-      }
-
-      .calcButton {
-        border: solid 1.5px;
-        border-radius: 8px;
-        width: 100px;
-        height: 50px;
-        font-size: medium;
-        color: black;
-        font-family: "Segoe UI", sans-serif;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-        margin-top: 15px;
-      }
-
-      .table {
-        padding: 20px;
-        border: solid 2px;
-        border-radius: 15px;
-        width: 200px;
-        height: 420px;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        display: flex;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        background-color: white;
-      }
-
-      button {
-        transition: transform 0.5s ease;
-        will-change: transform;
-      }
-
-      button:hover {
-        transform: scale(1.03) translateX(0);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="table">
-      <label
-        style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif"
-        for="first"
-        >1. Number:</label
-      >
-      <input
-        id="first"
-        style="padding-top: 4px"
-        class="input"
-        type="number"
-      /><br />
-
-      <label
-        style="margin-left: 2.5px; font-family: 'Segoe UI', sans-serif"
-        for="second"
-        >2. Number:</label
-      >
-      <input
-        id="second"
-        class="input"
-        style="margin-bottom: 3px"
-        type="number"
-      /><br />
-
-      <label
-        for="operation"
-        style="font-family: 'Segoe UI', sans-serif; margin-bottom: 10px"
-        >Operation:</label
-      >
-      <select id="operation">
-        <option value="addition">Addition Process</option>
-        <option value="subtraction">Subtraction Process</option>
-        <option value="multiplication">Multiplication Process</option>
-        <option value="division">Division Process</option>
-      </select>
-      <br />
-      <button class="calcButton" onclick="calculation()">Calculate</button>
-
-      <div style="margin-top: 15px" id="result"></div>
-      <div class="rstButton" style="margin-top: 15px" id="reset" onclick="reset()"></div>
-    </div>
-    <script>
-      function calculation() {
-        let num1 = parseFloat(document.getElementById("first").value);
-        let num2 = parseFloat(document.getElementById("second").value);
-        let operation = document.getElementById("operation").value;
-
-        if (isNaN(num1) || isNaN(num2)) {
-          document.getElementById("result").textContent = "Pls Enter Numbers!";
-          document.getElementById("reset").innerHTML = `
-            <button onclick="a()" style="
-            border: solid 1px;
-            border-radius: 8px;
-            width: 100px;
-            height: 50px;
-            font-size: medium;
-            color: black;
-            font-family: 'Segoe UI', sans-serif;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            cursor: pointer;
-            ">Try again</button>`;
-          return;
-        }
-        let result;
-        switch (operation) {
-          case "addition":
-            result = num1 + num2;
-            break;
-
-          case "subtraction":
-            result = num1 - num2;
-            break;
-          case "multiplication":
-            result = num1 * num2;
-            break;
-
-          case "division":
-            result = num1 / num2;
-            break;
-        }
-        document.getElementById("result").textContent = "Result: " + result;
-        document.getElementById("reset").innerHTML = `
-    <button onclick="a()" style="
-    cursor: pointer;
-    background-color: white;
-    color: black;
-    margin-top:10px;
-    border-radius:6px;
-    padding:8px 12px;
-    font-family: 'Segoe UI', sans-serif;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    border: none;
-    outline: none;
-    ">Try again</button>`;
-      }
-      function reset() {
-        document.getElementById("first").value = "";
-        document.getElementById("second").value = "";
-        document.getElementById("operation").value = "addition";
-        document.getElementById("result").textContent = "";
-        document.getElementById("reset").innerHTML = "";
-      }
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="calculator">
+  <input id="display" readonly>
+  <div id="keys">
+    <button onclick="appendToDisplay('+')" class="operator">+</button>
+    <button onclick="appendToDisplay('7')">7</button>
+    <button onclick="appendToDisplay('8')">8</button>
+    <button onclick="appendToDisplay('9')">9</button>
+    <button onclick="appendToDisplay('-')" class="operator">-</button>
+    <button onclick="appendToDisplay('4')">4</button>
+    <button onclick="appendToDisplay('5')">5</button>
+    <button onclick="appendToDisplay('6')">6</button>
+    <button onclick="appendToDisplay('*')" class="operator">*</button>
+    <button onclick="appendToDisplay('1')">1</button>
+    <button onclick="appendToDisplay('2')">2</button>
+    <button onclick="appendToDisplay('3')">3</button>
+    <button onclick="appendToDisplay('/')" class="operator">/</button>
+    <button onclick="appendToDisplay('0')">0</button>
+    <button onclick="appendToDisplay('.')">.</button>
+    <button onclick="calculate()">=</button>
+    <Button onclick="clearDisplay()" class="operator">C</Button>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
 </html>
