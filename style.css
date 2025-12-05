@@ -23,6 +23,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: hsla(0, 0%, 0%, 0.863);
   border-radius: 15px;
+  width: 90%;
   max-width: 500px;
   overflow: hidden;
 }
@@ -64,4 +65,16 @@ button:active {
 
 .operator:active {
   background-color: rgb(255, 111, 0);
+}
+
+@media (max-width: 600px) {
+  button {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  #display {
+    font-size: 3rem;
+  }
 }
