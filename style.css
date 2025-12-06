@@ -20,7 +20,6 @@ body {
   color: black;
   background-color: rgb(255, 248, 248);
   outline: none;
-  border: black 3px solid;
   font-family: 'Orbitron', 'Roboto Mono', monospace;
   font-weight: bold;
   border-top-left-radius: 15px;
@@ -34,6 +33,7 @@ body {
   width: 90%;
   max-width: 500px;
   overflow: hidden;
+  border: black 2px solid;
 }
 
 #keys {
@@ -102,8 +102,8 @@ button:active {
 
 @media (max-width: 600px) {
   button {
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
     font-size: 2rem;
     font-family: 'Orbitron', 'Roboto Mono', monospace;
     
@@ -112,6 +112,6 @@ button:active {
   #display {
     font-size: 3rem;
     font-family: 'Orbitron', 'Roboto Mono', monospace;
-    width: 95%;
+    width: 100%;
   }
 }
