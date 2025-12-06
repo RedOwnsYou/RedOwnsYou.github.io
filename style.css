@@ -21,7 +21,7 @@ body {
   background-color: rgb(255, 248, 248);
   outline: none;
   border: black 3px solid;
-  font-family: Arial, sans-serif;
+  font-family: 'Orbitron', 'Roboto Mono', monospace;
   font-weight: bold;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -53,6 +53,7 @@ button {
   font-size: 3rem;
   font-weight: bold;
   cursor: pointer;
+  font-family: 'Orbitron', 'Roboto Mono', monospace;
 }
 
 button:hover {
