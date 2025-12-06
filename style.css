@@ -102,8 +102,8 @@ button:active {
 
 @media (max-width: 600px) {
   button {
-    width: 70px;
-    height: 70px;
+    width: 72px;
+    height: 72px;
     font-size: 2rem;
     font-family: 'Orbitron', 'Roboto Mono', monospace;
     
