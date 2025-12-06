@@ -12,17 +12,19 @@ body {
 }
 
 #display {
-  width: 100%;
-  padding: 20px;
+  width: 95%;
+  padding: 10px;
   font-size: 5rem;
   text-align: left;
   border: none;
   color: black;
   background-color: rgb(255, 248, 248);
   outline: none;
-  border: none;
+  border: black 3px solid;
   font-family: Arial, sans-serif;
   font-weight: bold;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 #calculator {
