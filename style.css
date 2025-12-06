@@ -105,9 +105,13 @@ button:active {
     width: 70px;
     height: 70px;
     font-size: 2rem;
+    font-family: 'Orbitron', 'Roboto Mono', monospace;
+    
   }
 
   #display {
     font-size: 3rem;
+    font-family: 'Orbitron', 'Roboto Mono', monospace;
+    width: 95%;
   }
 }
