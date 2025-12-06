@@ -20,7 +20,7 @@ body {
   color: black;
   background-color: rgb(255, 248, 248);
   outline: none;
-  border: 2px solid black;
+  border: none;
 }
 
 #calculator {
