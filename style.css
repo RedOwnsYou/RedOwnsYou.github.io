@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background: linear-gradient(135deg, rgb(203, 0, 239), rgb(0, 255, 255));
+  background: url(img.jpg);
   margin: 0px;
   display: flex;
   justify-content: center;
