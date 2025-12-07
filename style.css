@@ -106,6 +106,7 @@ button:active {
     height: 60px;
     font-size: 2rem;
     font-family: 'Orbitron', 'Roboto Mono', monospace;
+    font-weight: bold;
     
   }
 
@@ -113,5 +114,6 @@ button:active {
     font-size: 3rem;
     font-family: 'Orbitron', 'Roboto Mono', monospace;
     width: 100%;
+    font-weight: bold;
   }
 }
