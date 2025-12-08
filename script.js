@@ -25,7 +25,7 @@ function clearDisplay() {
 }
 
 function clearLast() {
-  if (display.value === "undefined" || display.value === "ERROR") {
+  if (display.value === "undefined" || display.value === "ERROR" || display.value === "Infinity" || display.value === "NaN") {
     clearDisplay();
     return;
   }
