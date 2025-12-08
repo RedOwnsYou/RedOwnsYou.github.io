@@ -25,7 +25,7 @@ function clearDisplay() {
 }
 
 function clearLast() {
-  if (display.value === "undefined" || display.value === "ERROR" || display.value === "Infinity" || display.value === "NaN") {
+  if (display.value === "Undefined" || display.value === "ERROR" || display.value === "Infinity" || display.value === "NaN") {
     clearDisplay();
     return;
   }
@@ -40,7 +40,12 @@ function clearLast() {
 function calculate() {
   try {
     display.value = eval(display.value);
+
+    if (display.value === "Infinity" || display.value === "NaN") {
+  display.value = "Undefined";
+}
   } catch (error) {
     display.value = "ERROR";
   }
 }
+
