@@ -17,6 +17,7 @@ body {
 
 #equal:active {
   background-color: rgb(7, 150, 2);
+  transform: scale(0.94);
 }
 
 #display {
@@ -70,6 +71,7 @@ button:hover {
 
 button:active {
   background-color: hsla(0, 0%, 30%, 0.704);
+  transform: scale(0.94);
 }
 
 .operator {
@@ -82,6 +84,7 @@ button:active {
 
 .operator:active {
   background-color: rgb(255, 111, 0);
+  transform: scale(0.94);
 }
 
 .parenthese {
@@ -94,6 +97,7 @@ button:active {
 
 .parenthese:active {
   background-color: rgb(4, 60, 91);
+  transform: scale(0.94);
 }
 
 #backspace {
@@ -106,6 +110,7 @@ button:active {
 
 #backspace:active {
   background-color: rgb(150, 0, 0);
+  transform: scale(0.94);
 }
 
 #display::placeholder {
