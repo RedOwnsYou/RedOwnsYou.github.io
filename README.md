@@ -1,1 +1,1 @@
-I'm a new coder. Just trying to learn html, css and js.
+I'm a new coder. Thats my first and best project ever.
