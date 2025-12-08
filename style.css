@@ -5,6 +5,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 #equal {
@@ -29,7 +30,6 @@ body {
   color: black;
   background-color: rgb(255, 248, 248);
   outline: none;
-  font-family: 'Orbitron', 'Roboto Mono', monospace;
   font-weight: bold;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -62,7 +62,6 @@ button {
   font-size: 3rem;
   font-weight: bold;
   cursor: pointer;
-  font-family: 'Orbitron', 'Roboto Mono', monospace;
 }
 
 button:hover {
@@ -115,7 +114,6 @@ button:active {
 
 #display::placeholder {
   color: #a1a0a0;
-  font-family: 'Orbitron', 'Roboto Mono', monospace;
   font-weight: bold;
 }
 
@@ -123,16 +121,11 @@ button:active {
   button {
     width: 60px;
     height: 60px;
-    font-size: 2rem;
-    font-family: 'Orbitron', 'Roboto Mono', monospace;
-    font-weight: bold;
-    
+    font-size: 2rem;    
   }
 
   #display {
     font-size: 3rem;
-    font-family: 'Orbitron', 'Roboto Mono', monospace;
     width: 100%;
-    font-weight: bold;
   }
 }
